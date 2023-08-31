@@ -28,17 +28,34 @@ public class Exercise2_13 {
         // create a Scanner
         Scanner input = new Scanner(System.in);
 
-        // get speed and acceleration: from the user
-        System.out.print("Enter speed and acceleration: ");
-        double v = input.nextDouble();
-        double a = input.nextDouble();
+        // get monthly saving amount from user
+        System.out.print("Enter the monthly saving amount: ");
+        double monthlySavingAmount = input.nextDouble();
 
 
-        // compute the minimum length ( length = (v * v) / 2a )
+        // compute the value after the first month
+        double firstMonth = monthlySavingAmount * (1 + 0.003125);
 
-        double length = (v * v) / (2 * a) ;
+        // compute the value after the second month
+        double secondMonth = (monthlySavingAmount + firstMonth) * (1 + 0.003125);
+
+        // compute the value after the third month
+        double thirdMonth = (monthlySavingAmount + secondMonth) * (1 + 0.003125);
+
+        // compute the value after the fourth month
+        double fourthMonth = (monthlySavingAmount + thirdMonth) * (1 + 0.003125);
+
+        // compute the value after the fifth month
+        double fifthMonth = (monthlySavingAmount + fourthMonth) * (1 + 0.003125);
+
+        // compute the value after the sixth month
+        double sixthMonth = (monthlySavingAmount + fifthMonth) * (1 + 0.003125);
+
 
         // display the needed energy
-        System.out.println("The minimum runway length for this airplane is " + (int)(length * 1000) / 1000.0);
+        System.out.println("After the first month, the account value is " + firstMonth);
+        System.out.println("After the second month, the account value is " + secondMonth);
+        System.out.println("After the third month, the account value is " + thirdMonth);
+        System.out.println("After the sixth month, the account value is " + sixthMonth);
     }
 }
